@@ -20,7 +20,7 @@ namespace MegaDesk.Models
         public int Drawers { get; set; }
 
         [Display(Name = "Surface Material")]
-        public int SurfaceMaterial { get; set; }
+        public string SurfaceMaterial { get; set; }
 
         [Display(Name = "Rush Order")]
         public int RushOrder { get; set; }
