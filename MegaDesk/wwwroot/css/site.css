@@ -151,7 +151,7 @@ article {
     text-align: center;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 981px) {
     article {
         display: block;
         width: 100%;
