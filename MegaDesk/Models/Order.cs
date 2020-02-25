@@ -25,6 +25,9 @@ namespace MegaDesk.Models
         [Display(Name = "Rush Order")]
         public int RushOrder { get; set; }
 
+        [Display(Name = "Total")]
+        public double QuoteTotal { get; set; }
+
         [Display(Name = "Date Added")]
         [DataType(DataType.Date)]
         public DateTime DateAdded { get; set; }

@@ -35,6 +35,9 @@
                 @Html.DisplayNameFor(model => model.Order[0].RushOrder)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Order[0].QuoteTotal)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Order[0].DateAdded)
             </th>
             <th></th>
@@ -63,6 +66,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RushOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuoteTotal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateAdded)

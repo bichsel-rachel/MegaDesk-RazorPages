@@ -31,9 +31,9 @@ namespace MegaDesk.Models
                         Width = 35,
                         Depth = 48,
                         Drawers = 5,
-                        // TODO: Change this to "Oak"
-                        SurfaceMaterial = 2,
+                        SurfaceMaterial = "Oak",
                         RushOrder = 3,
+                        QuoteTotal = 500,
                         DateAdded = DateTime.Parse("2020-1-05")
                     },
 
@@ -44,9 +44,9 @@ namespace MegaDesk.Models
                         Width = 40,
                         Depth = 25,
                         Drawers = 1,
-                        // TODO: Change this to "Veneer"
-                        SurfaceMaterial = 3,
+                        SurfaceMaterial = "Veneer",
                         RushOrder = 5,
+                        QuoteTotal = 500,
                         DateAdded = DateTime.Parse("2020-1-07")
                     },
 
@@ -57,9 +57,9 @@ namespace MegaDesk.Models
                         Width = 25,
                         Depth = 13,
                         Drawers = 9,
-                        // TODO: Change this to "Pine"
-                        SurfaceMaterial = 4,
+                        SurfaceMaterial = "Pine",
                         RushOrder = 14,
+                        QuoteTotal = 500,
                         DateAdded = DateTime.Parse("2020-1-10")
                     },
 
@@ -70,9 +70,9 @@ namespace MegaDesk.Models
                         Width = 30,
                         Depth = 40,
                         Drawers = 7,
-                        // TODO: Change this to "Laminate"
-                        SurfaceMaterial = 2,
+                        SurfaceMaterial = "Laminate",
                         RushOrder = 3,
+                        QuoteTotal = 500,
                         DateAdded = DateTime.Parse("2020-1-15")
                     },
 
@@ -83,9 +83,9 @@ namespace MegaDesk.Models
                         Width = 80,
                         Depth = 35,
                         Drawers = 2,
-                        // TODO: Change this to "Rosewood"
-                        SurfaceMaterial = 1,
+                        SurfaceMaterial = "Rosewood",
                         RushOrder = 5,
+                        QuoteTotal = 500,
                         DateAdded = DateTime.Parse("2020-1-25")
                     },
 
@@ -96,9 +96,9 @@ namespace MegaDesk.Models
                         Width = 35,
                         Depth = 41,
                         Drawers = 5,
-                        // TODO: Change this to "Veneer"
-                        SurfaceMaterial = 4,
+                        SurfaceMaterial = "Veneer",
                         RushOrder = 3,
+                        QuoteTotal = 500,
                         DateAdded = DateTime.Parse("2020-2-05")
                     }
 
