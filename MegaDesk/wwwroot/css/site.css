@@ -1,6 +1,16 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/* Fonts
+    Headings/Titles
+    font-family: 'Libre Baskerville', serif;
+
+    Normal text
+    font-family: 'Oxygen', sans-serif;
+
+
+*/
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -27,7 +37,7 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
   html {
@@ -59,13 +69,193 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
 .footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 90%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+  background: white;
+}
+
+
+/******* Custom Styles ********/
+html {
+    background: #2e4aff ;
+}
+a {
+    color: #2e4aff;
+}
+
+.btn-primary {
+    background-color: #2e4aff;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+body, ul, li, a {
+    font-family: 'Oxygen', sans-serif;
+}
+
+body {
+    margin: auto;
+    background: white;
+    width: 90%;
+    height: 100vh;
+}
+
+section {
+    width: 100%;
+    padding: 1rem 15px 0px 15px;
+    height: 100%;
+    border: 2px solid orange;
+}
+
+.sectionHeader {
+    width: 100%;
+    text-align: center;
+}
+
+article {
+    background: white;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    max-height: 300px;
+}
+
+.articleImage {
+    flex-grow: 1;
+    margin-right: 50px;
+    margin-left: 50px;
+    display: inline-block;
+}
+
+.articleImage img {
+    max-height: 300px;
+    padding-bottom: 15px;
+}
+
+.articleText {
+    flex-grow: 4;
+    display: inline-block;
+}
+
+.copyrightText {
+    color: #2e4aff;
+    text-align: center;
+}
+
+@media (max-width: 736px) {
+    article {
+        display: block;
+        width: 100%;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    .articleImage {
+        width: 100%;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .articleImage img {
+        max-height: 300px;
+        padding-bottom: 15px;
+    }
+
+    .articleText {
+        margin-left: 10%;
+    }
+
+    section img {
+        max-width: 50%;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    .table td, .table th {
+        padding: 0px 0rem 0px 9rem;
+        border-top: 1px solid #dee2e6;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+
+    tr {
+        border-top: 2px solid #4E8098;
+        border-left: 2px solid #4E8098;
+        border-right: 2px solid #4E8098;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+        td:before {
+            position: absolute;
+            top: 0px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+        }
+
+        td:before {
+            font-weight: 700;
+        }
+
+        td:nth-of-type(1):before {
+            content: "First Name: ";
+        }
+
+        td:nth-of-type(2):before {
+            content: "Last Name: ";
+        }
+
+        td:nth-of-type(3):before {
+            content: "Desk Width: ";
+        }
+
+        td:nth-of-type(4):before {
+            content: "Desk Depth: ";
+        }
+
+        td:nth-of-type(5):before {
+            content: "Drawers: ";
+        }
+
+        td:nth-of-type(6):before {
+            content: "Surface Material: ";
+        }
+
+        td:nth-of-type(7):before {
+            content: "Rush Order: ";
+        }
+
+        td:nth-of-type(8):before {
+            content: "Total: ";
+        }
+
+        td:nth-of-type(9):before {
+            content: "Date Added: ";
+        }
+
+        td:nth-of-type(10):before {
+            content: "Quote Options: ";
+        }
 }
