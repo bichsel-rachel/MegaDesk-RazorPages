@@ -2,10 +2,10 @@
 @model MegaDesk.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Saved Quotes";
 }
 
-<h1>Index</h1>
+<h1>All Quotes</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -40,7 +40,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Order[0].DateAdded)
             </th>
-            <th></th>
+            <th>Quote Options</th>
         </tr>
     </thead>
     <tbody>
@@ -53,10 +53,10 @@
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Width)
+                @Html.DisplayFor(modelItem => item.Width)"
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Depth)
+                @Html.DisplayFor(modelItem => item.Depth)"
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Drawers)
@@ -65,10 +65,10 @@
                 @Html.DisplayFor(modelItem => item.SurfaceMaterial)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RushOrder)
+                @Html.DisplayFor(modelItem => item.RushOrder) days
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.QuoteTotal)
+                $@Html.DisplayFor(modelItem => item.QuoteTotal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateAdded)

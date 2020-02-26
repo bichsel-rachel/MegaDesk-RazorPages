@@ -12,6 +12,7 @@ namespace MegaDesk
 {
     public class CreateModel : PageModel
     {
+
         private readonly MegaDesk.Data.MegaDeskContext _context;
 
         public CreateModel(MegaDesk.Data.MegaDeskContext context)
@@ -36,11 +37,16 @@ namespace MegaDesk
                 return Page();
             }
 
+            Order.QuoteTotal = Order.getTotalCost();
             
             _context.Order.Add(Order);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
+
+      
+
+
     }
 }
