@@ -23,6 +23,7 @@ namespace MegaDesk
         public IActionResult OnGet()
         {
             return Page();
+
         }
 
         [BindProperty]

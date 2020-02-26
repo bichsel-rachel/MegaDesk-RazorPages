@@ -33,7 +33,7 @@ namespace MegaDesk.Models
                         Drawers = 5,
                         SurfaceMaterial = "Oak",
                         RushOrder = 3,
-                        QuoteTotal = 500,
+                        QuoteTotal = 1400,
                         DateAdded = DateTime.Parse("2020-1-05")
                     },
 
@@ -46,7 +46,7 @@ namespace MegaDesk.Models
                         Drawers = 1,
                         SurfaceMaterial = "Veneer",
                         RushOrder = 5,
-                        QuoteTotal = 500,
+                        QuoteTotal = 435,
                         DateAdded = DateTime.Parse("2020-1-07")
                     },
 
@@ -56,10 +56,10 @@ namespace MegaDesk.Models
                         LastName = "Corgan",
                         Width = 25,
                         Depth = 13,
-                        Drawers = 9,
+                        Drawers = 7,
                         SurfaceMaterial = "Pine",
                         RushOrder = 14,
-                        QuoteTotal = 500,
+                        QuoteTotal = 600,
                         DateAdded = DateTime.Parse("2020-1-10")
                     },
 
@@ -72,7 +72,7 @@ namespace MegaDesk.Models
                         Drawers = 7,
                         SurfaceMaterial = "Laminate",
                         RushOrder = 3,
-                        QuoteTotal = 500,
+                        QuoteTotal = 920,
                         DateAdded = DateTime.Parse("2020-1-15")
                     },
 
@@ -85,7 +85,7 @@ namespace MegaDesk.Models
                         Drawers = 2,
                         SurfaceMaterial = "Rosewood",
                         RushOrder = 5,
-                        QuoteTotal = 500,
+                        QuoteTotal = 2460,
                         DateAdded = DateTime.Parse("2020-1-25")
                     },
 
@@ -98,7 +98,7 @@ namespace MegaDesk.Models
                         Drawers = 5,
                         SurfaceMaterial = "Veneer",
                         RushOrder = 3,
-                        QuoteTotal = 500,
+                        QuoteTotal = 1080,
                         DateAdded = DateTime.Parse("2020-2-05")
                     }
 
