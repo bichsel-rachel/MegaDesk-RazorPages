@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MegaDesk.Data;
 using MegaDesk.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MegaDesk
 {
@@ -20,10 +21,23 @@ namespace MegaDesk
         }
 
         public IList<Order> Order { get;set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+        // Requires using Microsoft.AspNetCore.Mvc.Rendering;
+        public SelectList LastName { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string OrderSurfaceMaterial { get; set; }
 
         public async Task OnGetAsync()
         {
-            Order = await _context.Order.ToListAsync();
+            var orders = from o in _context.Order
+                         select o;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                orders = orders.Where(s => s.LastName.Contains(SearchString));
+            }
+
+            Order = await orders.ToListAsync();
         }
     }
 }
