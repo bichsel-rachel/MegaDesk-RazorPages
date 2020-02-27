@@ -34,7 +34,7 @@ namespace MegaDesk
                          select o;
             if (!string.IsNullOrEmpty(SearchString))
             {
-                orders = orders.Where(s => s.LastName.Contains(SearchString));
+                orders = orders.Where(s => s.FirstName.Contains(SearchString) || s.LastName.Contains(SearchString));
             }
 
             Order = await orders.ToListAsync();
