@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MegaDesk.Data;
 using MegaDesk.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MegaDesk
 {
@@ -19,11 +20,15 @@ namespace MegaDesk
             _context = context;
         }
 
-        public IList<Order> Order { get;set; }
+        public IList<Order> Order { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+        // Requires using Microsoft.AspNetCore.Mvc.Rendering;
+
 
         public string NameSort { get; set; }
         public string DateSort { get; set; }
-                public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortOrder)
         {
             var orders = from o in _context.Order
                          select o;
