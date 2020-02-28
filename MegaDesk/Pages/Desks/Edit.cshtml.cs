@@ -52,6 +52,7 @@ namespace MegaDesk
 
             try
             {
+                Order.QuoteTotal = Order.getTotalCost();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

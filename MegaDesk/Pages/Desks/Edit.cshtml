@@ -41,17 +41,27 @@
             </div>
             <div class="form-group">
                 <label asp-for="Order.SurfaceMaterial" class="control-label"></label>
-                <input asp-for="Order.SurfaceMaterial" class="form-control" />
+                <select asp-for="Order.SurfaceMaterial" class="form-control">
+                    <option value="Oak">Oak</option>
+                    <option value="Laminate">Laminate</option>
+                    <option value="Pine">Pine</option>
+                    <option value="Rosewood">Rosewood</option>
+                    <option value="Veneer">Veneer</option>
+                </select>
                 <span asp-validation-for="Order.SurfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Order.RushOrder" class="control-label"></label>
-                <input asp-for="Order.RushOrder" class="form-control" />
+                <label asp-for="Order.RushOrder" class="control-label"></label><br />
+
+                @Html.RadioButton("Order.RushOrder", "3")  3 Days<br />
+                @Html.RadioButton("Order.RushOrder", "5") 5 Days<br />
+                @Html.RadioButton("Order.RushOrder", "7") 7 Days<br />
+                @Html.RadioButton("Order.RushOrder", "14") 14 Days (none)
                 <span asp-validation-for="Order.RushOrder" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Order.DateAdded" class="control-label"></label>
-                <input asp-for="Order.DateAdded" class="form-control" />
+                <input asp-for="Order.DateAdded" value="@System.DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" hidden />
                 <span asp-validation-for="Order.DateAdded" class="text-danger"></span>
             </div>
             <div class="form-group">
