@@ -31,21 +31,28 @@ namespace MegaDesk.Models
         public int ID { get; set; }
 
         [Display(Name = "First name")]
+        [Required]
         public string FirstName { get; set; }
 
         [Display(Name = "Last name")]
+        [Required]
         public string LastName { get; set; }
 
+        [Range(24, 96)]
         public double Width { get; set; }
 
+        [Range(12, 48)]
         public double Depth { get; set; }
 
+        [Range(0, 7)]
         public int Drawers { get; set; }
 
         [Display(Name = "Surface Material")]
+        [Required]
         public string SurfaceMaterial { get; set; }
 
         [Display(Name = "Rush Order")]
+        [Required]
         public int RushOrder { get; set; }
 
         [Display(Name = "Total")]
