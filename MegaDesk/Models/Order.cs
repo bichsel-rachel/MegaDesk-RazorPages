@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MegaDesk.Models
@@ -53,9 +54,12 @@ namespace MegaDesk.Models
 
         [Display(Name = "Rush Order")]
         [Required]
+        
         public int RushOrder { get; set; }
 
-        [Display(Name = "Total")]
+    
+
+    [Display(Name = "Total")]
         public double QuoteTotal { get; set; }
 
         [Display(Name = "Date Added")]
