@@ -38,6 +38,11 @@ namespace MegaDesk
                 return Page();
             }
 
+            if (Order.SurfaceMaterial is "Oak")
+            {
+
+            }
+
             Order.QuoteTotal = Order.getTotalCost();
             
             _context.Order.Add(Order);

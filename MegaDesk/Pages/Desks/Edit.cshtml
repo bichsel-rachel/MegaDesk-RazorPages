@@ -41,13 +41,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="Order.SurfaceMaterial" class="control-label"></label>
-                <select asp-for="Order.SurfaceMaterial" class="form-control">
+                <select asp-for="Order.SurfaceMaterial" class="form-control" onchange="imgfunc(this)">
                     <option value="Oak">Oak</option>
                     <option value="Laminate">Laminate</option>
                     <option value="Pine">Pine</option>
                     <option value="Rosewood">Rosewood</option>
                     <option value="Veneer">Veneer</option>
                 </select>
+                <br>
+                <br>
+                <img id="imageToSwap" class="profile" src="~/images/logo.jpg" style="width:200px;height:200px;">
                 <span asp-validation-for="Order.SurfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -77,3 +80,27 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<!--Image code-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+    function imgfunc(selectObject) {
+        var value = selectObject.value;
+        if (value == "Oak") {
+            document.getElementById("imageToSwap").src = "https://images-na.ssl-images-amazon.com/images/I/81WZIM51pML._AC_SX425_.jpg"
+        }
+        else if (value == "Laminate") {
+            document.getElementById("imageToSwap").src = "https://images.homedepot-static.com/productImages/4e0fc99c-dc6f-43d1-82a9-d05e2710b831/svn/lakeshore-pecan-wood-grain-texture-trafficmaster-laminate-wood-flooring-35947-64_1000.jpg"
+        }
+        else if (value == "Pine") {
+            document.getElementById("imageToSwap").src = "https://images-na.ssl-images-amazon.com/images/I/31%2BIP6jVZrL._AC_.jpg"
+        }
+        else if (value == "Rosewood") {
+            document.getElementById("imageToSwap").src = "https://cdn.shopify.com/s/files/1/0834/4341/files/WG159_D_large.jpg?v\u003d1487050233"
+        }
+        else if (value == "Veneer") {
+            document.getElementById("imageToSwap").src = "https://cdn2.cloud1.cemah.net/wp-content/uploads/sites/53/2017/09/teak-veneer-quarter-cut.jpg"
+        }
+    }
+</script>
