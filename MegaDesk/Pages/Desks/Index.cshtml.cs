@@ -20,58 +20,68 @@ namespace MegaDesk
             _context = context;
         }
 
-        public IList<Order> Order { get; set; }
-        [BindProperty(SupportsGet = true)]
+        public PaginatedList<Order> Order { get; set; }
         public string SearchString { get; set; }
-        // Requires using Microsoft.AspNetCore.Mvc.Rendering;
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
         public SelectList LastName { get; set; }
         [BindProperty(SupportsGet = true)]
         public string OrderSurfaceMaterial { get; set; }
-
-
         public string NameSort { get; set; }
         public string DateSort { get; set; }
-        public async Task OnGetAsync(string sortOrder)
+
+
+
+        public async Task OnGetAsync(string sortOrder,
+            string currentFilter, string searchString, int? pageIndex)
         {
-            var orders = from o in _context.Order
-                         select o;
-            if (!string.IsNullOrEmpty(SearchString))
+            CurrentSort = sortOrder;
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            if (searchString != null)
             {
-                orders = orders.Where(s => s.FirstName.Contains(SearchString) || s.LastName.Contains(SearchString));
-                Order = await orders.ToListAsync();
-
-
+                pageIndex = 1;
             }
-
             else
             {
-                NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-                DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+                searchString = currentFilter;
+            }
 
-                IQueryable<Order> deskQuote = from s in _context.Order
-                                              select s;
+            CurrentFilter = searchString;
 
-                switch (sortOrder)
-                {
-                    case "name_desc":
-                        deskQuote = deskQuote.OrderByDescending(s => s.LastName);
-                        break;
-                    case "Date":
-                        deskQuote = deskQuote.OrderBy(s => s.DateAdded);
-                        break;
-                    case "date_desc":
-                        deskQuote = deskQuote.OrderByDescending(s => s.DateAdded);
-                        break;
-                    default:
-                        deskQuote = deskQuote.OrderBy(s => s.LastName);
-                        break;
-                }
-
-
-
-                Order = await deskQuote.ToListAsync();
+            IQueryable<Order> deskQuote = from s in _context.Order
+                                          select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                deskQuote = deskQuote.Where(s => s.FirstName.Contains(searchString) || s.LastName.Contains(searchString));
 
             }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    deskQuote = deskQuote.OrderByDescending(s => s.LastName);
+                    break;
+                case "Date":
+                    deskQuote = deskQuote.OrderBy(s => s.DateAdded);
+                    break;
+                case "date_desc":
+                    deskQuote = deskQuote.OrderByDescending(s => s.DateAdded);
+                    break;
+                default:
+                    deskQuote = deskQuote.OrderBy(s => s.LastName);
+                    break;
+            }
+
+
+
+            //Order = await deskQuote.AsNoTracking().ToListAsync();
+            int pageSize = 10;
+            Order = await PaginatedList<Order>.CreateAsync(
+            deskQuote.AsNoTracking(), pageIndex ?? 1, pageSize);
+
+
+
         }
     }
 }
