@@ -4082,6 +4082,7 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-item {
   margin-bottom: -1px;
+  color: red;
 }
 
 .nav-tabs .nav-link {

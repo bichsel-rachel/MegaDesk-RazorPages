@@ -46,10 +46,10 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #1b6ec2 !important;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #1b6ec2 !important;
 }
 
 .box-shadow {
@@ -89,6 +89,20 @@ a {
     color: #2e4aff;
 }
 
+nav li a {
+    color: #1b6ec2 !important;
+    padding-right: 5em;
+    padding-left: 5em;
+
+}
+
+    nav li a:hover {
+        color: white !important;
+        background: #ff902e;
+        border-radius: 10px;
+        transition: .5s;
+    }
+
 .btn-primary {
     background-color: #2e4aff;
 }
@@ -105,6 +119,7 @@ body {
     margin: auto;
     background: white;
     width: 90%;
+    height:auto;
 }
 
 section {
@@ -114,9 +129,13 @@ section {
     
 }
 
-#row2{
-   
+hr {
+    border-top: 2px solid #1b6ec2;
 }
+
+#row2 {
+}
+
 .sectionHeader {
     width: 100%;
     text-align: center;
@@ -133,22 +152,21 @@ article {
 }
 
 .articleImage {
-    flex-grow: 1;
-    margin-right: 50px;
-    margin-left: 50px;
+    flex-grow: .1;
     display: flex;
-    justify-content: center;
-    
+    margin: 5px;
 }
 
     .articleImage img {
         max-height: 300px;
         padding-bottom: 15px;
+        max-width: 200px;
     }
 
 .articleText {
-    flex-grow: 4;
+    flex-grow: 2;
     display: inline-block;
+    width: 30%;
 }
 
 .copyrightText {
@@ -157,6 +175,23 @@ article {
 }
 
 @media (max-width: 981px) {
+
+    nav li a {
+        color: #1b6ec2 !important;
+        padding-right: 5em;
+        padding-left: 5em;
+        padding-left: 20px;
+        text-align: center;
+        transition: .5s;
+    }
+
+        nav li a:hover {
+            color: white !important;
+            background: #ff902e;
+            border-radius: 10px;
+        }
+
+
     article {
         display: block;
         width: 100%;
