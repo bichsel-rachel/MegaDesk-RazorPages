@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{searchString?}"
 @model MegaDesk.IndexModel
 
 @{
@@ -13,7 +13,8 @@
 
 <form>
     <p>
-        Name: <input type="text" asp-for="SearchString" />
+        Last Name: <input type="text" asp-for="SearchString" />
+
         <input type="submit" value="Search" />
     </p>
 </form>

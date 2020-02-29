@@ -24,6 +24,9 @@ namespace MegaDesk
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
         // Requires using Microsoft.AspNetCore.Mvc.Rendering;
+        public SelectList LastName { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string OrderSurfaceMaterial { get; set; }
 
 
         public string NameSort { get; set; }
