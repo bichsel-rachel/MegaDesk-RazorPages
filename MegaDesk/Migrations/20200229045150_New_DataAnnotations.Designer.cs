@@ -4,14 +4,16 @@ using MegaDesk.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MegaDesk.Migrations
 {
     [DbContext(typeof(MegaDeskContext))]
-    partial class MegaDeskContextModelSnapshot : ModelSnapshot
+    [Migration("20200229045150_New_DataAnnotations")]
+    partial class New_DataAnnotations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
