@@ -59,8 +59,10 @@ namespace MegaDesk.Models
         [Required]
         
         public int RushOrder { get; set; }
-
+        public string[] RushOrders = new[] { "3", "5", "7", "14" };
     
+
+
 
     [Display(Name = "Total")]
         public double QuoteTotal { get; set; }

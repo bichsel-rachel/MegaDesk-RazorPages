@@ -50,16 +50,16 @@
                 </select>
                 <br>
                 <br>
-                <img id="imageToSwap" class="profile" src="~/images/logo.jpg" style="width:200px;height:200px;">
+                <img id="imageToSwap" class="profile" src="~/images/logo.jpg" alt="material type"style="width:200px;height:200px;">
                 <span asp-validation-for="Order.SurfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Order.RushOrder" class="control-label"></label><br />
 
-                @Html.RadioButton("Order.RushOrder", "3")  3 Days<br />
-                @Html.RadioButton("Order.RushOrder", "5") 5 Days<br />
-                @Html.RadioButton("Order.RushOrder", "7") 7 Days<br />
-                @Html.RadioButton("Order.RushOrder", "14") 14 Days (none)
+                @Html.RadioButton("Order.RushOrder", "3", new { id = "option1" })  3 Days<br />
+                @Html.RadioButton("Order.RushOrder", "5", new { id = "option2" }) 5 Days<br />
+                @Html.RadioButton("Order.RushOrder", "7", new { id = "option3" }) 7 Days<br />
+                @Html.RadioButton("Order.RushOrder", "14", true) 14 Days (none)
                 <span asp-validation-for="Order.RushOrder" class="text-danger"></span>
             </div>
             <div class="form-group">
