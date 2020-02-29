@@ -32,10 +32,12 @@ namespace MegaDesk.Models
         public int ID { get; set; }
 
         [Display(Name = "First name")]
+        [RegularExpression(@"^[a-zA-Z \-\']+$", ErrorMessage = "First name cannot include special characters or numbers.")]
         [Required]
         public string FirstName { get; set; }
 
         [Display(Name = "Last name")]
+        [RegularExpression(@"^[a-zA-Z \-\']+$", ErrorMessage = "Last name cannot include special characters or numbers.")]
         [Required]
         public string LastName { get; set; }
 
